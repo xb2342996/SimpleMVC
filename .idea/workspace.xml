@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f44af728-49b0-420d-9a2d-ff5613f7812e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1oBL7GmpAiYK5UhCrEtbkSfoHwt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.41954023" />
+  </component>
+  <component name="RunManager" selected="JUnit.RequestMappingHandlerMappingTest.getHandlerTest">
+    <configuration name="HandlerInterceptorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-spring-mvc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxbb.simplemvc.interceptor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxbb.simplemvc.interceptor" />
+      <option name="MAIN_CLASS_NAME" value="com.xxbb.simplemvc.interceptor.HandlerInterceptorTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestMappingHandlerMappingTest.getHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-spring-mvc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxbb.simplemvc.handler.mapping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxbb.simplemvc.handler.mapping" />
+      <option name="MAIN_CLASS_NAME" value="com.xxbb.simplemvc.handler.mapping.RequestMappingHandlerMappingTest" />
+      <option name="METHOD_NAME" value="getHandlerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestMappingHandlerMappingTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-spring-mvc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxbb.simplemvc.handler.mapping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxbb.simplemvc.handler.mapping" />
+      <option name="MAIN_CLASS_NAME" value="com.xxbb.simplemvc.handler.mapping.RequestMappingHandlerMappingTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RequestMappingHandlerMappingTest.getHandlerTest" />
+        <item itemvalue="JUnit.HandlerInterceptorTest.test" />
+        <item itemvalue="JUnit.RequestMappingHandlerMappingTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f44af728-49b0-420d-9a2d-ff5613f7812e" name="Default Changelist" comment="" />
+      <created>1612754867224</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612754867224</updated>
+      <workItem from="1612754868764" duration="15875000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2240" y="133" key="#Project_Structure" timestamp="1612756392517">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2240" y="133" key="#Project_Structure/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612756392517" />
+    <state x="1892" y="123" width="1720" height="857" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1612766044567">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1892" y="123" width="1720" height="857" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612766044567" />
+    <state x="2562" y="357" key="#com.intellij.ide.util.MemberChooser" timestamp="1612774998798">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2562" y="357" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612774998798" />
+    <state width="1878" height="358" key="GridCell.Tab.0.bottom" timestamp="1612775839605">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.0.bottom/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775839605" />
+    <state width="1878" height="358" key="GridCell.Tab.0.center" timestamp="1612775839604">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.0.center/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775839604" />
+    <state width="1878" height="358" key="GridCell.Tab.0.left" timestamp="1612775839604">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.0.left/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775839604" />
+    <state width="1878" height="358" key="GridCell.Tab.0.right" timestamp="1612775839605">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.0.right/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775839605" />
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1612775810186">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775810186" />
+    <state width="1878" height="358" key="GridCell.Tab.1.center" timestamp="1612775810186">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.center/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775810186" />
+    <state width="1878" height="358" key="GridCell.Tab.1.left" timestamp="1612775810185">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.left/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775810185" />
+    <state width="1878" height="358" key="GridCell.Tab.1.right" timestamp="1612775810186">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.right/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612775810186" />
+    <state x="384" y="126" key="SettingsEditor" timestamp="1612754893033">
+      <screen x="0" y="23" width="1792" height="1043" />
+    </state>
+    <state x="384" y="126" key="SettingsEditor/0.23.1792.1043/1792.23.1920.1057@0.23.1792.1043" timestamp="1612754893033" />
+    <state x="264" y="207" key="new project wizard" timestamp="1612754918442">
+      <screen x="0" y="23" width="1792" height="1043" />
+    </state>
+    <state x="264" y="207" key="new project wizard/0.23.1792.1043/1792.23.1920.1057@0.23.1792.1043" timestamp="1612754918442" />
+    <state x="2417" y="258" key="search.everywhere.popup" timestamp="1612770707891">
+      <screen x="1792" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2417" y="258" key="search.everywhere.popup/0.23.1792.1043/1792.23.1920.1057@1792.23.1920.1057" timestamp="1612770707891" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/TestHandlerInterceptor.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/Test2HandlerInterceptor.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/Test2HandlerInterceptor.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/Test2HandlerInterceptor.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/config/AppConfig.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/TestHandlerInterceptor.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-spring-mvc/src/test/java/com/xxbb/simplemvc/interceptor/TestHandlerInterceptor.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
