@@ -1,7 +1,9 @@
 package com.xxbb.simplemvc.handler.argument;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xxbb.simplemvc.controller.TestResolverController;
 import com.xxbb.simplemvc.handler.HandlerMethod;
+import com.xxbb.simplemvc.vo.UserVo;
 import org.junit.Test;
 import org.springframework.core.DefaultParameterNameDiscoverer;
 import org.springframework.format.datetime.DateFormatter;
@@ -46,6 +48,33 @@ public class HandlerArgumentResolverTest {
                 e.printStackTrace();
             }
         });
+    }
 
+    @Test
+    public void test2() throws Exception {
+        TestResolverController controller = new TestResolverController();
+        Method method = controller.getClass().getMethod("user", UserVo.class);
+
+        HandlerMethod handlerMethod = new HandlerMethod(controller, method);
+
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        UserVo userVo = UserVo.builder().name("xxbb").age("28").birthday(new Date()).build();
+        ObjectMapper mapper = new ObjectMapper();
+        request.setContent(mapper.writeValueAsString(userVo).getBytes());
+
+        HandlerMethodArgumentResolverComposite composite = new HandlerMethodArgumentResolverComposite();
+        composite.addResolver(new RequestBodyMethodArgumentResolver());
+
+        MockHttpServletResponse response = new MockHttpServletResponse();
+        DefaultParameterNameDiscoverer parameterNameDiscoverer = new DefaultParameterNameDiscoverer();
+        handlerMethod.getParameters().forEach(methodParameter -> {
+            try {
+                methodParameter.initParameterNameDiscovery(parameterNameDiscoverer);
+                Object value = composite.resolveArgument(methodParameter, request, response, null, null);
+                System.out.println(methodParameter.getParameterName() + ": " + value + "   type: " + value.getClass());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
