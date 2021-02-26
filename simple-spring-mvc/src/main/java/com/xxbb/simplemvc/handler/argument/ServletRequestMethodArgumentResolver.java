@@ -24,11 +24,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Type;
 
 public class ServletRequestMethodArgumentResolver implements HandlerMethodArgumentResolver {
-
-    private static final Object NO_VALUE = new Object();
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
@@ -38,26 +35,6 @@ public class ServletRequestMethodArgumentResolver implements HandlerMethodArgume
 
     @Override
     public Object resolveArgument(MethodParameter parameter, HttpServletRequest request, HttpServletResponse response, ModelAndViewContainer container, ConversionService conversionService) throws Exception {
-        Object arg = readMessageWithConverters(request, parameter, parameter.getParameterType());
-        if (arg == null && checkRequired(parameter)) {
-            throw new MissingServletRequestParameterException(parameter.getParameterName(), parameter.getParameterType().getName());
-        }
-        return arg;
-    }
-
-    protected boolean checkRequired(MethodParameter parameter) {
-        RequestBody requestBody = parameter.getParameterAnnotation(RequestBody.class);
-        return (requestBody != null) && requestBody.required() && !parameter.isOptional();
-    }
-
-    protected <T> Object readMessageWithConverters(HttpServletRequest servletRequest, MethodParameter parameter, Class<T> paramType) throws HttpMediaTypeNotSupportedException, HttpMessageNotReadableException {
-        Assert.state(servletRequest != null, "No HttpServletRequest");
-        ServletServerHttpRequest inputMessage = new ServletServerHttpRequest(servletRequest);
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(inputMessage.getBody(), paramType);
-        } catch (IOException ex) {
-            throw new HttpMessageNotReadableException("I/O error while reading input message", ex, inputMessage);
-        }
+        return request;
     }
 }
