@@ -11,7 +11,7 @@ import java.util.List;
 
 public class HandlerMethodReturnValueHandlerComposite implements HandlerMethodReturnValueHandler{
 
-    private List<HandlerMethodReturnValueHandler> returnValueHandlers = new ArrayList<>();
+    private final List<HandlerMethodReturnValueHandler> returnValueHandlers = new ArrayList<>();
 
     @Override
     public boolean supportsReturnType(MethodParameter returnType) {
@@ -36,5 +36,9 @@ public class HandlerMethodReturnValueHandlerComposite implements HandlerMethodRe
 
     public void addReturnValueHandler(HandlerMethodReturnValueHandler... handlers) {
         Collections.addAll(this.returnValueHandlers, handlers);
+    }
+
+    public void addReturnValueHandler(List<HandlerMethodReturnValueHandler> handlers) {
+        this.returnValueHandlers.addAll(handlers);
     }
 }

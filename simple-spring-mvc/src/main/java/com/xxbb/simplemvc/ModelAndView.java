@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 public class ModelAndView {
     private Object view;
     private Model model = new ExtendedModelMap();
-    private HttpStatus httpStatus;
+    private HttpStatus status;
 
     public Object getView() {
         return view;
@@ -25,12 +25,12 @@ public class ModelAndView {
         this.model = model;
     }
 
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
+    public HttpStatus getStatus() {
+        return status;
     }
 
-    public void setHttpStatus(HttpStatus httpStatus) {
-        this.httpStatus = httpStatus;
+    public void setStatus(HttpStatus status) {
+        this.status = status;
     }
 
     public void setViewName(String viewName) {
