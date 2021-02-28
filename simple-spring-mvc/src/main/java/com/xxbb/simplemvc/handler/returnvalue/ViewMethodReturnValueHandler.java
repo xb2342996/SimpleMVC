@@ -1,6 +1,7 @@
 package com.xxbb.simplemvc.handler.returnvalue;
 
 import com.xxbb.simplemvc.handler.ModelAndViewContainer;
+import com.xxbb.simplemvc.view.View;
 import org.springframework.core.MethodParameter;
 
 import javax.servlet.http.HttpServletRequest;

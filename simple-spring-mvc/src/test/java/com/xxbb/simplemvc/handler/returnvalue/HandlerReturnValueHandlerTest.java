@@ -1,8 +1,8 @@
 package com.xxbb.simplemvc.handler.returnvalue;
 
-import com.xxbb.simplemvc.controller.TestResolverController;
 import com.xxbb.simplemvc.controller.TestReturnValueController;
 import com.xxbb.simplemvc.handler.ModelAndViewContainer;
+import com.xxbb.simplemvc.view.View;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.core.MethodParameter;
