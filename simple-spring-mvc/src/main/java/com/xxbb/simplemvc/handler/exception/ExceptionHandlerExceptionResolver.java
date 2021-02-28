@@ -153,7 +153,7 @@ public class ExceptionHandlerExceptionResolver implements HandlerExceptionResolv
         return customerReturnValueHandlers;
     }
 
-    public void getCustomerReturnValueHandlers(List<HandlerMethodReturnValueHandler> customerReturnValueHandlers) {
+    public void setCustomerReturnValueHandlers(List<HandlerMethodReturnValueHandler> customerReturnValueHandlers) {
         this.customerReturnValueHandlers = customerReturnValueHandlers;
     }
 

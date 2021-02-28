@@ -2,6 +2,7 @@ package com.xxbb.simplemvc.config;
 
 import com.xxbb.simplemvc.DispatcherServlet;
 import com.xxbb.simplemvc.HandlerAdapter;
+import com.xxbb.simplemvc.annotation.EnableWebMvc;
 import com.xxbb.simplemvc.annotation.RequestMapping;
 import com.xxbb.simplemvc.handler.RequestMappingHandlerAdapter;
 import com.xxbb.simplemvc.handler.exception.ExceptionHandlerExceptionResolver;
@@ -26,13 +27,14 @@ import org.springframework.format.support.DefaultFormattingConversionService;
 import java.text.DateFormat;
 import java.util.Collections;
 
+@EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.xxbb.simplemvc")
 public class AppConfig {
-    @Bean
-    public HandlerMapping handlerMapping() {
-        return new RequestMappingHandlerMapping();
-    }
+//    @Bean
+//    public HandlerMapping handlerMapping() {
+//        return new RequestMappingHandlerMapping();
+//    }
 
 //    @Bean
 //    public RequestMappingHandlerMapping interceptorHandlerMapping() {
@@ -49,38 +51,38 @@ public class AppConfig {
 //        return mappingHandlerMapping;
 //    }
 
-    @Bean
-    public HandlerAdapter handlerAdapter(ConversionService conversionService) {
-        RequestMappingHandlerAdapter handlerAdapter = new RequestMappingHandlerAdapter();
-        handlerAdapter.setConversionService(conversionService);
-        return handlerAdapter;
-    }
-
-    @Bean
-    public ConversionService conversionService() {
-        DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
-        DateFormatter dateFormatter = new DateFormatter();
-        dateFormatter.setPattern("yyyy-MM-dd HH:mm:ss");
-        conversionService.addFormatter(dateFormatter);
-        return conversionService;
-    }
-
-    @Bean
-    public ViewResolver viewResolver() {
-        ContentNegotiatingViewResolver negotiatingViewResolver = new ContentNegotiatingViewResolver();
-        negotiatingViewResolver.setViewResolvers(Collections.singletonList(new InternalResourceViewResolver()));
-        return negotiatingViewResolver;
-    }
+//    @Bean
+//    public HandlerAdapter handlerAdapter(ConversionService conversionService) {
+//        RequestMappingHandlerAdapter handlerAdapter = new RequestMappingHandlerAdapter();
+//        handlerAdapter.setConversionService(conversionService);
+//        return handlerAdapter;
+//    }
+//
+//    @Bean
+//    public ConversionService conversionService() {
+//        DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
+//        DateFormatter dateFormatter = new DateFormatter();
+//        dateFormatter.setPattern("yyyy-MM-dd HH:mm:ss");
+//        conversionService.addFormatter(dateFormatter);
+//        return conversionService;
+//    }
+//
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        ContentNegotiatingViewResolver negotiatingViewResolver = new ContentNegotiatingViewResolver();
+//        negotiatingViewResolver.setViewResolvers(Collections.singletonList(new InternalResourceViewResolver()));
+//        return negotiatingViewResolver;
+//    }
+//
+//    @Bean
+//    public HandlerExceptionResolver handlerExceptionResolver(ConversionService conversionService) {
+//        ExceptionHandlerExceptionResolver resolver = new ExceptionHandlerExceptionResolver();
+//        resolver.setConversionService(conversionService);
+//        return resolver;
+//    }
 
     @Bean
     public DispatcherServlet dispatcherServlet() {
         return new DispatcherServlet();
-    }
-
-    @Bean
-    public HandlerExceptionResolver handlerExceptionResolver(ConversionService conversionService) {
-        ExceptionHandlerExceptionResolver resolver = new ExceptionHandlerExceptionResolver();
-        resolver.setConversionService(conversionService);
-        return resolver;
     }
 }
