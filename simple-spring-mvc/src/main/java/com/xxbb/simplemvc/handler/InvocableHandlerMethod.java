@@ -7,9 +7,11 @@ import org.springframework.core.MethodParameter;
 import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.util.Assert;
+import org.springframework.util.ObjectUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -31,8 +33,18 @@ public class InvocableHandlerMethod extends HandlerMethod{
         this.returnValueHandler = returnValueHandler;
     }
 
-    public void invokeAndHandle(HttpServletRequest request, HttpServletResponse response, ModelAndViewContainer mavContainer) throws Exception {
-        List<Object> args = this.getMethodArgumentValues(request, response, mavContainer);
+    public InvocableHandlerMethod(Object bean, Method method,
+                                  HandlerMethodArgumentResolverComposite argumentResolver,
+                                  HandlerMethodReturnValueHandlerComposite returnValueHandler,
+                                  ConversionService conversionService) {
+        super(bean, method);
+        this.argumentResolver = argumentResolver;
+        this.returnValueHandler = returnValueHandler;
+        this.conversionService = conversionService;
+    }
+
+    public void invokeAndHandle(HttpServletRequest request, HttpServletResponse response, ModelAndViewContainer mavContainer, Object... providedArgs) throws Exception {
+        List<Object> args = this.getMethodArgumentValues(request, response, mavContainer, providedArgs);
         Object object = doInvoke(args);
         if (Objects.isNull(object)) {
             if (response.isCommitted()) {
@@ -54,16 +66,33 @@ public class InvocableHandlerMethod extends HandlerMethod{
 
     protected List<Object> getMethodArgumentValues(HttpServletRequest request,
                                                    HttpServletResponse response,
-                                                   ModelAndViewContainer mavContainer) throws Exception {
+                                                   ModelAndViewContainer mavContainer,
+                                                   Object... providedArgs) throws Exception {
         Assert.notNull(argumentResolver, "HandlerMethodArgumentResolver cannot be empty");
 
         List<MethodParameter> parameters = this.getParameters();
         List<Object> args = new ArrayList<>(parameters.size());
         for (MethodParameter methodParameter : parameters) {
             methodParameter.initParameterNameDiscovery(parameterNameDiscoverer);
+            Object arg = findProvidedArgument(methodParameter, providedArgs);
+            if (Objects.nonNull(arg)) {
+                args.add(arg);
+                continue;
+            }
             args.add(argumentResolver.resolveArgument(methodParameter, request, response, mavContainer, conversionService));
         }
         return args;
+    }
+
+    protected static Object findProvidedArgument(MethodParameter parameter, Object... providedArgs) {
+        if (!ObjectUtils.isEmpty(providedArgs)) {
+            for (Object providedArg : providedArgs) {
+                if (parameter.getParameterType().isInstance(providedArg)) {
+                    return providedArg;
+                }
+            }
+        }
+        return null;
     }
 
     public void setParameterNameDiscoverer(ParameterNameDiscoverer parameterNameDiscoverer) {

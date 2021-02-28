@@ -2,6 +2,7 @@ package com.xxbb.simplemvc;
 
 
 import com.xxbb.simplemvc.handler.HandlerExecutionChain;
+import com.xxbb.simplemvc.handler.exception.HandlerExceptionResolver;
 import com.xxbb.simplemvc.handler.mapping.HandlerMapping;
 import com.xxbb.simplemvc.util.RequestContextHolder;
 import com.xxbb.simplemvc.view.View;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.ServletException;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Objects;
 
 public class DispatcherServlet extends HttpServlet implements ApplicationContextAware {
@@ -29,11 +32,14 @@ public class DispatcherServlet extends HttpServlet implements ApplicationContext
     private HandlerMapping handlerMapping;
     private ViewResolver viewResolver;
 
+    private Collection<HandlerExceptionResolver> handlerExceptionResolvers;
+
     @Override
     public void init() {
         handlerMapping = this.applicationContext.getBean(HandlerMapping.class);
         handlerAdapter = this.applicationContext.getBean(HandlerAdapter.class);
         viewResolver = this.applicationContext.getBean(ViewResolver.class);
+        handlerExceptionResolvers = this.applicationContext.getBeansOfType(HandlerExceptionResolver.class).values();
     }
 
     @Override
@@ -91,8 +97,18 @@ public class DispatcherServlet extends HttpServlet implements ApplicationContext
         logger.info("No view rendering, null ModelAndView returned");
     }
 
-    private ModelAndView processHandlerException(HttpServletRequest request, HttpServletResponse response, Exception ex) {
-        return null;
+    private ModelAndView processHandlerException(HttpServletRequest request, HttpServletResponse response, Exception ex) throws Exception {
+        if (CollectionUtils.isEmpty(handlerExceptionResolvers)) {
+            throw ex;
+        }
+        for (HandlerExceptionResolver resolver :
+                handlerExceptionResolvers) {
+            ModelAndView exMav = resolver.resolveException(request, response, ex);
+            if (exMav != null) {
+                return exMav;
+            }
+        }
+        throw ex;
     }
 
     private void render(ModelAndView mv, HttpServletRequest request, HttpServletResponse response) throws Exception {

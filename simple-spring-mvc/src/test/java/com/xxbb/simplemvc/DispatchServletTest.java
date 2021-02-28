@@ -28,4 +28,19 @@ public class DispatchServletTest extends BaseJunit4Test{
             System.out.println(name + ": " + response.getHeader(name));
         });
     }
+
+    @Test
+    public void service2() throws ServletException, IOException {
+        dispatcherServlet.init();
+
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        MockHttpServletResponse response = new MockHttpServletResponse();
+
+        request.setParameter("name", "xxbb");
+        request.setRequestURI("/test/dispatch2");
+
+        dispatcherServlet.service(request, response);
+
+        System.out.println(response.getContentAsString());
+    }
 }

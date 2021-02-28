@@ -4,6 +4,9 @@ import com.xxbb.simplemvc.DispatcherServlet;
 import com.xxbb.simplemvc.HandlerAdapter;
 import com.xxbb.simplemvc.annotation.RequestMapping;
 import com.xxbb.simplemvc.handler.RequestMappingHandlerAdapter;
+import com.xxbb.simplemvc.handler.exception.ExceptionHandlerExceptionResolver;
+import com.xxbb.simplemvc.handler.exception.ExceptionHandlerMethodResolver;
+import com.xxbb.simplemvc.handler.exception.HandlerExceptionResolver;
 import com.xxbb.simplemvc.handler.interceptor.InterceptorRegistry;
 import com.xxbb.simplemvc.handler.mapping.HandlerMapping;
 import com.xxbb.simplemvc.handler.mapping.RequestMappingHandlerMapping;
@@ -72,5 +75,12 @@ public class AppConfig {
     @Bean
     public DispatcherServlet dispatcherServlet() {
         return new DispatcherServlet();
+    }
+
+    @Bean
+    public HandlerExceptionResolver handlerExceptionResolver(ConversionService conversionService) {
+        ExceptionHandlerExceptionResolver resolver = new ExceptionHandlerExceptionResolver();
+        resolver.setConversionService(conversionService);
+        return resolver;
     }
 }
