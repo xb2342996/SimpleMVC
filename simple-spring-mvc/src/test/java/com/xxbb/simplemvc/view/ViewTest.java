@@ -1,4 +1,4 @@
-package com.xxbb.simplemvc.handler.view;
+package com.xxbb.simplemvc.view;
 
 import com.xxbb.simplemvc.view.RedirectView;
 import org.junit.Test;
