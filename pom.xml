@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>simple-spring-mvc</module>
+        <module>simple-spring-mvc-autoconfigure</module>
     </modules>
 
     <properties>
